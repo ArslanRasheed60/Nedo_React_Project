@@ -1,0 +1,331 @@
+/*-------------------------------
+    Dark Theme  CSS
+-------------------------------*/
+
+//Color Variable
+$clr_white: #fff;
+$clr_offwhite: rgba(255,255,255,0.85);
+$clr_black: #000;
+// $clr_aztech: #0E1C1F;
+$clr_aztech: #091315;
+$clr_cod: #111;
+$clr_grey: #ABA8B0;
+$clr_mine_shaft: #3B3B3B;
+$clr_kepple:#43B4A0;
+$clr_mirage:#231F3E;
+$clr_carnation:#F76162;
+$clr_rock:#07012F;
+
+.switch-theme-mode{
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    z-index: 99;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    &.round {
+        border-radius: 34px;
+        &:before{
+            border-radius: 50%;
+        }
+    }
+    &:before {
+        position: absolute;
+        content: "";
+        height: 40px;
+        width: 40px;
+        left: 0px;
+        bottom: 4px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        box-shadow: 0 0px 15px #2020203d;
+        background: white url('../img/night.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+input:checked + .slider {
+  background-color: $clr_black;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px  $clr_black;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url('../img/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*---------------------------------
+    Color CSS For Elements 
+-----------------------------------*/
+.theme-light {
+    .navbar-brand{
+        .logo-dark{
+            display: none!important;
+        }
+        .logo-light{
+            display: block!important;
+        }
+    }
+}
+
+.theme-dark {
+    .dpt-100{
+        padding-top: 100px;
+    }
+    .navbar-brand{
+        .logo-light{
+            display: none!important;
+        }
+        .logo-dark{
+            display: block!important;
+        }
+    }
+    .td-cod,
+    .bg-albastor,
+    .activity-card.style2,
+    .section-overlay::before {
+        background-color: $clr_cod!important;
+    }
+    body,
+    .bg-white,
+    .footer-wrap,
+    .top-collection-wrap .collection-content .auction-deadline .auction-end .countdown .cdown,
+    .auction-card.style1 .auction-info-wrap .auction-title span,
+    .search-area{
+        background-color: $clr_black!important;
+    }
+    .td-aztech,
+    .bg-rock,
+    .bg-vista-white,
+    .seller-card,
+    .hw-card,
+    .blog-card,
+    #placeBid .modal-content,
+    .testimonial-slider .testimonial-card,
+    .auction-card.style1,
+    .auction-card.style5,
+    .auction-card.style6,
+    .auction-card.style7,
+    .auction-card.style8,
+    .auction-card.style9,
+    .auction-card.style10,
+    .author-card.style1,
+    .author-card.style2,
+    .team-card::after,
+    .auction-deadline,
+    .single-auction-tab,
+    .activity-card,
+    .author-details-box,
+    .auction-filter-btn.style2 button,
+    .add-wallet-card,
+    .testimonial-card,
+    .single-auction-desc .countdown .cdown, 
+    .single-auction-desc .auction-bid .bid-btn span,
+    .single-auction-desc .single-auction-metainfo span.item-views,
+    .rank-table .table thead tr th,
+    .contact-item,
+    .wp-block-quote,
+    .rank-table .table tbody tr:nth-child(2n) td {
+        background-color: $clr_aztech!important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h3 a,
+    a,
+    .btn:hover,
+    .create-collection-form .form-group label,
+    .rank-table .table thead tr th,
+    .rank-table .table tbody tr td{
+        color: $clr_white!important;
+    }
+    p,span,
+    .checkbox label,
+    .form_group label,
+    .auction-filter .form-group label,
+    .content-feature-list li,
+    .activity-card .activity-card-info .activity-card-metainfo li,
+    .login-form .login-body .form-group label,
+    .author-details-box .single-author-info .author-metainfo-wrap ul.author-metainfo li,
+    .blog-card .blog-info .blog-metainfo li,
+    article ol li,
+    .terms-wrap ol li,
+    article p strong, 
+    .terms-wrap p strong,
+    .post-metainfo li{
+        color: $clr_offwhite!important;
+    }
+    h3:hover a,
+    a:hover,
+    .copyright-text a{
+        color: $clr_kepple!important;
+    }
+    article{
+        border-color: rgba(255,255,255,0.19);
+    }
+    .tag-list ul li a{
+        background: $clr_aztech!important;
+        color: $clr_white!important;
+    }
+    .tag-list ul li a:hover{
+        background: $clr_kepple!important;
+        color: $clr_white;
+    }
+    .header-wrap{
+        &.style1 {
+            background-color: transparent;
+        }
+        &.sticky{
+            background-color: $clr_cod;
+        }
+    }
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a:hover,
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a:focus,
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a.active {
+        color: $clr_kepple!important;
+    }
+    .hero-wrap.style2,
+    .author-wrap.style1 {
+        background-blend-mode: color;
+        background-color: #080808;
+    }
+    .btn.style4,
+    .comment-item,
+    .top-collection-wrap .collection-content .auction-deadline .current-bid,
+    .vl-card .vl-img .vl-author-img{
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .post-author,
+    .post-meta-option{
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    input,textarea,
+    .create-collection-form .form-group input,
+    .create-collection-form .form-group textarea,
+    #cmt-form .comment-form .form-group input,
+    #cmt-form .comment-form .form-group textarea,
+    #contactForm .form-group input,
+    #contactForm .form-group textarea,
+    .login-form-wrap .login-body .form-group input,
+    .search-box .form-group input,
+    .newsletter-content form .form-group input{
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $clr_white;
+    }
+    #contactForm{
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .page-nav li a{
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .create-collection-form,
+    .sidebar-widget{
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .single-auction-tab .auction-tablist .nav-item .nav-link {
+        background-color: #333;
+        color: #fff;
+    }
+    .single-auction-tab .auction-tablist .nav-item .nav-link.active {
+        background-color: $clr_kepple;
+        border-color: transparent;
+    }
+    .create-collection-form .form-group select,
+    select{
+        background-color: $clr_black!important;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $clr_white;
+        background-image: url(../img/down-arrow-white.png);
+     }
+}
+@media only screen and (max-width:575px) {
+    .switch-theme-mode {
+        right: 10px;
+    }
+    .switch {
+        width: 45px;
+        height: 27px;
+    }
+    .slider:before {
+        height: 34px;
+        width: 34px;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(13px);
+        transform: translateX(13px);
+    }
+}
+@media only screen and (max-width:991px) {
+    .theme-dark{
+        .main-menu-wrap,
+        .header-wrap .navbar .navbar-nav .nav-item .dropdown-menu{
+            background-color: $clr_aztech;
+        }
+        .menu-close i,
+        .header-wrap .navbar .navbar-nav .nav-item .menu-expand i{
+            color: $clr_white!important;
+        }
+        .header-wrap .navbar .navbar-nav .nav-item a.active,
+        .main-menu li a.active{
+            color: $clr_kepple!important;
+        }
+        .main-menu li a.active,
+        .main-menu li a{
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .header-wrap.style2 .navbar .navbar-nav .nav-item .dropdown-menu li,
+        .header-wrap .navbar .navbar-nav .nav-item a {
+            border-color:rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+@media only screen and (min-width:992px) {
+    .theme-dark{
+        .header-wrap .navbar .navbar-nav .nav-item .dropdown-menu,
+        .main-menu-wrap #menu ul li.has-children .sub-menu{
+            background-color: $clr_aztech;
+        }
+        .header-wrap .navbar .navbar-nav .nav-item a:hover,
+        .header-wrap .navbar .navbar-nav .nav-item a:focus,
+        .header-wrap .navbar .navbar-nav .nav-item a.active{
+              color: $clr_kepple!important;
+         }
+         .header-wrap.style2 .navbar .navbar-nav .nav-item .dropdown-menu li{
+            border-color:rgba(255, 255, 255, 0.15);
+        }
+    }
+}
